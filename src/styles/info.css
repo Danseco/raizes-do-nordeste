@@ -1,0 +1,93 @@
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    width: 100%;
+}
+
+#restaurant_info {
+    align-items: column;
+    margin-top: 2%;
+}
+
+.franquias {
+    margin-top: 2%;
+    margin-block-end: 2%;
+}
+
+#info_description {
+    margin-top: 2%;
+    display: flex;
+    
+}
+
+#restaurant_img {
+    margin-top: 2%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    width: 70%;
+}
+#restaurant_img img {
+    height: 700px;
+    width: fit-content;
+    box-shadow: 0px 0px 10px 2px #03030344;
+    border-radius: 25px;
+}
+
+#info_menu_button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#info_menu_button a {
+    margin-top: 2%;
+    margin-block-end: 2%;
+    border: none;
+    display: flex;
+    background-color: var(--color-orange);
+    border-radius: 25px;
+    font-size: large;
+    padding: 10px 10px;
+    color: #ffffff;
+    font-weight: 1000;
+    box-shadow: 0px 0px 10px 2px #03030344;
+    transition: background-color .3s ease;
+    list-style: none;
+    text-decoration: none;
+}
+
+#info_menu_button a:hover {
+  background-color: #b87a7a;
+}
+
+@media screen and (max-width: 1500px) {
+    #restaurant_img img{
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #restaurant_img {
+        display: none;
+    }
+
+    #restaurant_info {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2%;
+    }
+
+    #info_menu_button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    }
+
+}

@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&family=Quicksand:wght@300..700&display=swap');
+@import url('navbar.css');
+@import url('home.css');
+@import url('new.css');
+@import url('menu.css');
+@import url('footer.css');
+@import url('info.css');
+@import url('login.css');
+@import url('signup.css');
+@import url('profile.css');
+
+/* Cores principais */
+:root {
+  --color-bege: #fccda1;
+  --color-bordo: rgb(121, 31, 31);
+  --color-orange: #ff7707;
+  --color-green: #338a39;
+}
+
+/* Fonte principal */
+*{
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bege);
+}
+
+section {
+  width: 100%;
+  padding: 28px 5%;
+
+}
+
+/* Botões */
+.button1 {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-green);
+  border-radius: 25px;
+  font-size: large;
+  padding: 15px 20px;
+  color: white;
+  font-weight: 1000;
+  box-shadow: 0px 0px 10px 2px #03030344;
+  transition: background-color .3s ease;
+  list-style: none;
+  text-decoration: none;
+}
+
+.button2 {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-orange);
+  border-radius: 25px;
+  font-size: large;
+  padding: 15px 20px;
+  color: white;
+  font-weight: 1000;
+  box-shadow: 0px 0px 10px 2px #03030344;
+  transition: background-color .3s ease;
+  list-style: none;
+  text-decoration: none;
+}
+
+.button3 {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bordo);
+  border-radius: 25px;
+  font-size: large;
+  padding: 15px 20px;
+  color: white;
+  font-weight: 1000;
+  box-shadow: 0px 0px 10px 2px #03030344;
+  transition: background-color .3s ease;
+  list-style: none;
+  text-decoration: none;
+}
+
+.button1:hover {
+  background-color: #53dd5d;
+}
+
+.button2:hover {
+  background-color: #b87a7a;
+}
+
+.button3:hover {
+  background-color: red;
+}
+
+.media_buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.media_buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: var(--color-orange);
+  color: white;
+  box-shadow: 0px 0px 10px 2px #03030344;
+  font-size: 1.23rem;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color .3s ease;
+}
+
+.media_buttons a:hover {
+  background-color: #b87a7a;
+}
+
+/* Botão início */
+.button_home a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: var(--color-orange);
+  color: white;
+  box-shadow: 0px 0px 10px 2px #03030344;
+  font-size: 1.23rem;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color .3s ease;
+}
+
+.button_home a:hover {
+  background-color: #b87a7a;
+}
+
+/* Textos */
+.section_title {
+    font-size: 4rem;
+    color: var(--color-bordo);
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.9;
+    text-align: center;
+}
+
+.section_subtitle {
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+}
+
+.login_title {
+    font-size: 3rem;
+    color: var(--color-bordo);
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.9;
+    text-align: center;
+}

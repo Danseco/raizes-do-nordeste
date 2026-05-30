@@ -1,0 +1,85 @@
+#home {
+    display: flex;
+    min-height: calc(100vh - 91px);
+    position: relative;
+}
+#cta {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 5%;
+}
+
+#cta .title{
+    font-size: 4rem;
+    color: var(--color-bordo);
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.9;
+}
+
+#cta_buttons {
+    display: flex;
+    gap: 24px;
+}
+
+#cta_buttons a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-bordo);
+    transition: background-color .3s ease;
+}
+
+#cta_buttons a:hover {
+  background-color: #b93030;
+}
+
+#phone_button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 14px;
+    font-size:large;
+    font-weight: 1000;
+    box-shadow: 0px 0px 12px 4px #03030344;
+    border-radius: 25px;
+}
+
+#banner {
+  margin-top: 5%;
+  display: flex;
+  align-items: start;
+  justify-content: end;
+  width: 70%;
+}
+
+#banner img {
+  height: 700px;
+  width: fit-content;
+  box-shadow: 0px 0px 10px 2px #03030344;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 1700px) {
+    #home {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+    #banner,
+    #banner img {
+        display: none;
+    }
+    #cta {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}

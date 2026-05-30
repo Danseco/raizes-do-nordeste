@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <title>Login</title>
+</head>
+<body>
+    <section id="login_page">
+        <div id="container-login">
+
+            <div id="login_header">
+
+                <h1 class="login_title">Login</h1>
+                
+                <div class="button_home">
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <form id="loginForm">
+
+                <h3>Email</h3>
+
+                <input type="email" id="email" placeholder="Digite seu email" required>
+
+                <h3>Senha</h3>
+
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+                <a id="forget"> Esqueceu sua senha? </a>
+
+                <button type="submit" id="entrar" class="button2">
+                Entrar
+                </button>
+
+            </form>
+
+            <div id="signup_link">
+                <p>Ainda não possui conta?</p>
+                <a href="signup.html"> Cadastre-se aqui!</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="src/javascript/login.js"></script>
+</body>
+</html>
