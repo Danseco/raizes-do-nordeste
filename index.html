@@ -13,12 +13,12 @@
 <body>
     <header>
         <nav id="navbar">
-            <!--Logo do restaurante-->
+            <!--Logo do restaurante -->
             <img id="nav_logo" src="images/logo.png" alt="Logo Raízes do Nordeste">
 
             <!-- Menu principal-->
             <ul id="nav_list">
-                <li class="nav_item active">
+                <li class="nav_item">
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav_item">
@@ -31,6 +31,7 @@
                     <a href="#info">Sobre</a>
                 </li>
             </ul>
+            
             <!--Botões do menu-->
             
         <div id="menu_button">
@@ -38,10 +39,14 @@
                <i class="fa-solid fa-user"></i>
                 <p id="login"></p>
             </a>
-
-            <button id="Bag" class="button2">
-               <i class="fa-solid fa-bag-shopping"></i>
-            </button>
+            <div class="cart-icon">
+                <button id="Bag" class="button2">
+                    <div>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-item-count"></span>
+                    </div>    
+                </button>
+            </div>
 
             <button id="mobile_button">
                 <i class="fa-solid fa-bars"></i>
@@ -70,6 +75,32 @@
             </ul>
         </div>
     </header>
+
+    <!-- Carrinho -->
+    <div class="cart">
+        <h2 class="cart-title">Meu carrinho</h2>
+        <div class="cart-content">
+           <!-- <div class="cart-box">
+                <img src="images/entrada1.png" class="cart-img">
+                <div class="cart-detail">
+                    <h2 class="cart-product-title">Acarajé tradicional</h2>
+                    <span class="cart-price">$24.90</span>
+                    <div class="cart-quantity">
+                        <button id="decrement">-</button>
+                        <span class="number">1</span>
+                        <button id="increment">+</button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-trash-can cart-remove"></i>
+            </div> -->
+        </div>
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0,00</div>
+        </div>
+        <button class="btn-buy">Continuar</button>
+        <i class="fa-solid fa-x" id="cart-close"></i>
+    </div>
 
     <main id="content">
         <section id="home">
@@ -213,8 +244,8 @@
                     <img src="images/entrada1.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 24,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 25.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -232,8 +263,8 @@
                     <img src="images/entrada2.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 14,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 15.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -251,8 +282,8 @@
                     <img src="images/entrada3.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 14,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 15.00 </h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -270,8 +301,8 @@
                     <img src="images/entrada4.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 18,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 19.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -289,8 +320,8 @@
                     <img src="images/entrada5.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 22,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 23.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -316,8 +347,8 @@
                     <img src="images/principais1.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 39,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 40.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -335,8 +366,8 @@
                     <img src="images/principais2.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 49,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 50.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -354,8 +385,8 @@
                     <img src="images/principais3.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 54,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 55.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -373,8 +404,8 @@
                     <img src="images/principais4.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 42,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 43.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -392,8 +423,8 @@
                     <img src="images/principais5.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 41,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 42.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -419,8 +450,8 @@
                     <img src="images/porcoes1.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 49,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 50.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -438,8 +469,8 @@
                     <img src="images/porcoes2.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 29,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 30.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -457,8 +488,8 @@
                     <img src="images/porcoes3.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 34,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 35.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -476,8 +507,8 @@
                     <img src="images/porcoes4.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 24,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 25.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -495,8 +526,8 @@
                     <img src="images/porcoes5.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 69,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 70.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -522,8 +553,8 @@
                     <img src="images/sobremesas1.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 15,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 16.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -541,8 +572,8 @@
                     <img src="images/sobremesas2.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 14,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 15.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -560,8 +591,8 @@
                     <img src="images/sobremesas3.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 15,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 16.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -579,8 +610,8 @@
                     <img src="images/sobremesas4.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 14,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 15.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -598,8 +629,8 @@
                     <img src="images/sobremesas5.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 17,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 18.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -625,8 +656,8 @@
                     <img src="images/bebidas1.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 9,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 10.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -644,8 +675,8 @@
                     <img src="images/bebidas2.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 9,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 10.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -663,8 +694,8 @@
                     <img src="images/bebidas3.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 9,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 10.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -682,8 +713,8 @@
                     <img src="images/bebidas4.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 9,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 10.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -701,8 +732,8 @@
                     <img src="images/bebidas5.png" class="dish_image">
 
                     <div class="dish_price">
-                        <h3>R$ 5,90</h3>
-                        <button class="button2">
+                        <h3 class="price">R$ 6.00</h3>
+                        <button class="add_cart">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </button>
                     </div>
@@ -765,6 +796,7 @@
     </main>
 
     <footer>
+ 
         <div id="footer_itens"> 
             <div class="logo_text">         
                 <img src="images/logo.png" class="footer_logo">
@@ -783,14 +815,58 @@
                     <i class="fa-brands fa-facebook"></i>
                 </a>
 
-                <a href="#navbar">
+                <a href="#home">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </div>
         </div>
+
+                    <!-- Menu inferior -->
+        <section id="menu_bottom">
+            <div class="container_bottom_menu">
+                <div class="bottom_menu">
+                    <div class="media_buttons">
+                        <a href="#home">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                    </div>
+                    <h4 class="munu_bottom_description">Início</h4>
+                </div>
+
+                <div class="bottom_menu">
+                    <div class="media_buttons">
+                        <a href="#menu">
+                            <i class="fa-solid fa-utensils"></i>
+                        </a>
+                    </div>
+                    <h4 class="munu_bottom_description">Menu</h4>
+                </div>
+
+                <div class="bottom_menu">
+                    <div class="media_buttons">
+                        <a href="#info">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </a>
+                    </div>
+                    <h4 class="munu_bottom_description">Novidades</h4>
+                </div>
+
+                <div class="bottom_menu">
+                    <div class="media_buttons">
+                        <a href="#info">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </a>
+                    </div>
+                    <h4 class="munu_bottom_description">Sobre</h4>
+                </div>
+                
+            </div>
+        </section>
+        
     </footer>
     
     <script src="src/javascript/script.js"></script>
     <script src="src/javascript/loginbtn.js"></script>
+    <script src="src/javascript/cart.js"></script>
 </body>
 </html>

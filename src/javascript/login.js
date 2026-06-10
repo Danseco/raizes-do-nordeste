@@ -17,7 +17,6 @@ loginForm.addEventListener("submit", function(e) {
         return;
     }
 
-    // Salva sessão
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
     alert("Login realizado!");

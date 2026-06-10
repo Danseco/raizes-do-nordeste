@@ -1,4 +1,10 @@
 const form = document.getElementById("cadastroForm");
+const fidelidadeSelecionada = document.querySelector(
+    'input[name="planoFidelidade"]:checked');
+
+const planoFidelidade = fidelidadeSelecionada
+    ? fidelidadeSelecionada.value === "true"
+    : false;
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -8,6 +14,9 @@ form.addEventListener("submit", function(e) {
     const senha = document.getElementById("senha").value;
     const telefone = document.getElementById("telefone").value;
     const endereco = document.getElementById("endereco").value;
+
+    const planoFidelidade =
+        document.querySelector('input[name="planoFidelidade"]:checked').value === "true";
 
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -23,7 +32,8 @@ form.addEventListener("submit", function(e) {
         email,
         senha,
         telefone,
-        endereco
+        endereco,
+        planoFidelidade
     };
 
     usuarios.push(novoUsuario);
@@ -33,10 +43,4 @@ form.addEventListener("submit", function(e) {
     alert("Cadastro realizado com sucesso!");
 
     window.location.href = "login.html";
-});
-
-ScrollReveal().reveal('#signup_page',{
-        origin: 'bottom',
-        duration: 1000,
-        distance: '20%'
 });

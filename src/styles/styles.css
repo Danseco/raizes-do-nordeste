@@ -9,6 +9,7 @@
 @import url('login.css');
 @import url('signup.css');
 @import url('profile.css');
+@import url('cart.css');
 
 /* Cores principais */
 :root {
@@ -56,6 +57,7 @@ section {
   transition: background-color .3s ease;
   list-style: none;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .button2 {
@@ -73,6 +75,7 @@ section {
   transition: background-color .3s ease;
   list-style: none;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .button3 {
@@ -90,6 +93,7 @@ section {
   transition: background-color .3s ease;
   list-style: none;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .button1:hover {

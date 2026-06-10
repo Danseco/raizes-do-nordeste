@@ -79,6 +79,29 @@
   background-color: #b87a7a;
 }
 
+.add_cart {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-orange);
+    border-radius: 25px;
+    font-size: large;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-weight: 1000;
+    box-shadow: 0px 0px 10px 2px #03030344;
+    transition: background-color .3s ease;
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add_cart:hover {
+    background-color: #b87a7a;
+}
+
+
 #food_menu_mobile {
     display: none;
 }
