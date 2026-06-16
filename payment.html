@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pr-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +7,24 @@
     <link rel="stylesheet" href="src/styles/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    
-    <title>Profile</title>
+    <title>Pagamento</title>
 </head>
+    <section id="payment_page">
+        <div id="container-payment">
+            <h1>Página de Pagamento Externo</h1>
+            <h3>Forma de pagamento:</h3>
+                <select id="payment_option">
+                    <option value="pix">Pix</option>
+                    <option value="pix">Cartão de Débito</option>
+                    <option value="pix">Cartão de Crédito</option>
+                </select>
 
-<body>
-    <section id="my_account">
-        <div id="container-profile">
-                <h1 class="login_title">Meu perfil</h1>
-            <h2 id="bemVindo"></h2>
-            <p>Seus dados:</p>
-            <p id="nomeLogin"></p>
-            <p id="emailLogin"></p>
-            <p id="telefoneLogin"></p>
-            <p id="enderecoLogin"></p>
-            <p id="planoFidelidadeStatus"></p>
-            <div id="button_menu">
-                <a href="index.html">
-                    <i class="fa-solid fa-house"></i>
-                </a>
-            </div>
-            <button onclick="logout()" class="button3">
-                Sair
+            <button id="btn-pay" class="button1">
+                <p id="valor_pagar"></p>
             </button>
         </div>
     </section>
 
-    <script src="src/javascript/profile.js"></script>
+    <script src="src/javascript/payment.js"></script>
 </body>
 </html>

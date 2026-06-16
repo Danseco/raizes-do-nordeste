@@ -10,8 +10,55 @@
     <title>Pedido</title>
 </head>
 <body>
-    <section>
-        <h1 class="section_title">Pedido</h1>
+    <section id="order_page">
+        <div id="container-order">
+            <h1 class="login_title">Pedido</h1>
+
+            <h3>Tipo de envio:<h3>
+
+            <div class="shipping_group">
+                <div class="shipping_option">
+                    <label>
+                        <input type="radio" name="entrega" value="retirada" checked>
+                        Retirar no balcão
+                    </label>
+
+                    <label>
+                        <input type="radio" name="entrega" value="domicilio">
+                        Entrega domiciliar
+                    </label>
+                </div>
+            </div>
+
+            <div class="franquia_group">
+                <h3>Selecione a Franquia:</h3>
+                <select id="franquia_option">
+                    <option value="belem">Nazaré, Belém - PA</option>
+                    <option value="recife">Boa Vista, Recife - PE</option>
+                    <option value="brasilia">Asa Sul, Brasília - DF</option>
+                    <option value="saoPaulo">Consolação, São Paulo - SP</option>
+                    <option value="curitiba">Água Verde, Curitiba - PR</option>
+                </select>
+            </div>
+            <p>Endereço<span id="delivery_address"></span></p>
+            <p>Subtotal: <span id="subtotal"></span></p>
+            <p>Frete: <span id="frete"></span></p>
+            <p>Desconto: <span id="desconto"></span></p>
+            <p>Total: <span id="total"></span></p>
+
+            <button id="btn-finish" class="button1">
+                Pagamento
+            </button>
+
+            <button id="btn-cancel" class="button3">
+                Cancelar
+            </button>
+            
+
+        </div>
+
     </section>
+
+    <script src="src/javascript/order.js"></script>
 </body>
 </html>

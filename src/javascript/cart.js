@@ -4,6 +4,7 @@ const cartClose= document.querySelector("#cart-close");
 cartIcon.addEventListener("click", () => cart.classList.add("active"));
 cartClose.addEventListener("click", () => cart.classList.remove("active"));
 
+// Botão de adcionar no carrinho
 const addCartButtons = document.querySelectorAll(".add_cart");
 addCartButtons.forEach(button => {
     button.addEventListener("click", event => {
@@ -12,7 +13,7 @@ addCartButtons.forEach(button => {
     });
 })
 
-
+// Produto selecionado aparece no carrinho
 const cartContent = document.querySelector(".cart-content");
 const addToCart = dish => {
     const productImgSrc = dish.querySelector("img").src;
@@ -45,6 +46,7 @@ const addToCart = dish => {
 
     cartContent.appendChild(cartBox);
 
+    // Remover item do carrinho
     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
         cartBox.remove();
 
@@ -53,6 +55,7 @@ const addToCart = dish => {
         updateTotalPrice();
     });
 
+    // Botões de quantidade
     cartBox.querySelector(".cart-quantity").addEventListener("click", event => {
         const numberElement = cartBox.querySelector(".number");
         const decrementButton = cartBox.querySelector("#decrement");
@@ -78,20 +81,34 @@ const addToCart = dish => {
     updateTotalPrice();
 };
 
+// Preco total dos produtos
 const updateTotalPrice = () => {
     const totalPriceElement = document.querySelector(".total-price");
     const cartBoxes = cartContent.querySelectorAll(".cart-box");
-    let total = 0;
+
+    let subtotal = 0;
+
     cartBoxes.forEach(cartBox => {
         const priceElement = cartBox.querySelector(".cart-price");
         const quantityElement = cartBox.querySelector(".number");
-        const price = priceElement.textContent.replace("R$", "");
-        const quantity = quantityElement.textContent;
-        total += price * quantity;
+
+        const price = parseFloat(
+            priceElement.textContent
+                .replace("R$", "")
+                .replace(",", ".")
+        );
+
+        const quantity = parseInt(quantityElement.textContent);
+
+        subtotal += price * quantity;
     });
-    totalPriceElement.textContent = `R$${total},00`;
+
+    totalPriceElement.textContent = `R$ ${subtotal.toFixed(2).replace(".", ",")}`;
+
+    return subtotal;
 };
 
+// Mostra quantos items tem no ícone do carrinho
 let cartItemCount = 0;
 const updateCartCount = change => {
     const cartItemCountBadge = document.querySelector(".cart-item-count");
@@ -105,12 +122,59 @@ const updateCartCount = change => {
     }
 };
 
+// Botão de comprar
 const buyButton = document.querySelector(".btn-buy");
 buyButton.addEventListener("click", () => {
     const cartBoxes = cartContent.querySelectorAll(".cart-box");
+
     if (cartBoxes.length === 0) {
-        alert("Seu carrinho está vazio, adicione produtos antes de comprar.");
+        alert("Seu carrinho está vazio.");
         return;
     }
+
+    const usuarioLogado =
+        JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (!usuarioLogado) {
+        alert("Você precisa realizar o login.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    const itens = [];
+
+    cartBoxes.forEach(cartBox => {
+
+        itens.push({
+            nome: cartBox.querySelector(".cart-product-title").textContent,
+
+            preco: parseFloat(
+                cartBox.querySelector(".cart-price")
+                    .textContent
+                    .replace("R$", "")
+                    .replace(",", ".")
+            ),
+
+            quantidade: parseInt(
+                cartBox.querySelector(".number").textContent
+            )
+        });
+
+    });
+
+    const subtotal = updateTotalPrice();
+    const pedido = {
+        itens,
+        subtotal,
+        frete: 0,
+        desconto: 0,
+        total: subtotal
+    };
+
+    localStorage.setItem(
+        "pedidoAtual",
+        JSON.stringify(pedido)
+    );
+
     window.location.href = "order.html";
 });

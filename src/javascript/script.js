@@ -5,6 +5,9 @@ $(document).ready(function() {
         icon.toggleClass("fa-bars");
         icon.toggleClass("fa-x");
     });
+
+    // Animações
+    
     ScrollReveal().reveal('#menu',{
         origin: 'left',
         duration: 2000,

@@ -19,11 +19,18 @@ document.getElementById("telefoneLogin").innerText =
 document.getElementById("enderecoLogin").innerText =
     `Endereço: ${usuario.endereco}`;
 
+document.getElementById("planoFidelidadeStatus").innerText =
+    usuario.planoFidelidade
+        ? "Plano fidelidade: Ativo"
+        : "Plano fidelidade: Desativado";
+
 function logout() {
     localStorage.removeItem("usuarioLogado");
 
     window.location.href = "login.html";
 };
+
+// Animações
 
 ScrollReveal().reveal('#my_account',{
         origin: 'bottom',
