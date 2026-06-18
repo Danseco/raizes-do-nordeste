@@ -12,6 +12,7 @@
 @import url('cart.css');
 @import url('order.css');
 @import url('payment.css');
+@import url('status.css');
 
 /* Cores principais */
 :root {

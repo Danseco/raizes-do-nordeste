@@ -1,0 +1,89 @@
+#container-status {
+    background-color: white; 
+    width: 100%;
+    max-width: 500px;
+    padding: 28px 2%;
+    margin-top: 5%;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 2px #03030344;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#container-status h3 {
+    margin: 2%;
+}
+
+#container-status h2 {
+    margin-top: 5%;
+}
+
+
+.container_status_menu {
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 25px;
+    margin-bottom: 5%;
+}
+
+.status {
+    place-items: center;
+    text-decoration: none;
+    list-style: none;
+    width: 40px;
+}
+
+.munu_status_description {
+    margin-top: 10%;
+}
+
+.status_buttons a {
+  display: flex;
+  gap: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: var(--color-green);
+  color: white;
+  font-size: 1.23rem;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.status_b_buttons a {
+  display: flex;
+  gap: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: gray;
+  color: white;
+  font-size: 1.23rem;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1700px) {
+
+    #container-status {
+    padding: 28px 5%;
+
+}
+}
+
+@media screen and (max-width: 600px) {
+
+    #container-status h5 {
+    font-size: xx-small;
+}
+
+}

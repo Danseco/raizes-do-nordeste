@@ -97,6 +97,10 @@
     cursor: pointer;
 }
 
+.menu_btn_desc {
+    color: black;
+}
+
 .add_cart:hover {
     background-color: #b87a7a;
 }
@@ -104,6 +108,7 @@
 
 #food_menu_mobile {
     display: none;
+    margin-top: 3%;
 }
 
 @media screen and (max-width: 1700px) {
@@ -153,4 +158,10 @@
     .dish {
         width: calc(100% - 12px)
     }
+}
+
+@media screen and (max-width: 350px) {
+    .menu_btn_desc {
+    display: none;
+}
 }

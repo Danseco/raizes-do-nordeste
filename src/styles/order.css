@@ -19,6 +19,12 @@
 #container-order p {
     margin: 3%;
 }
+select {
+    margin: 3%;
+    border-radius: 10px;
+    font-size: medium;
+    padding: 10px;
+}
 
 .shipping_option input[type="radio"] {
     accent-color: var(--color-bordo);

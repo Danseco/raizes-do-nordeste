@@ -36,6 +36,12 @@ function atualizarEndereco() {
 
     }
 
+    pedido.tipoEntrega = tipoEntrega;
+    pedido.endereco = deliveryAddress.textContent;
+    pedido.franquia = franquiaSelect.options[
+        franquiaSelect.selectedIndex
+    ].text;
+    localStorage.setItem( "pedidoAtual", JSON.stringify(pedido) );
 }
 
 radiosEntrega.forEach(radio => {
@@ -93,6 +99,7 @@ function atualizarPedido() {
     pedido.desconto = desconto;
     pedido.total = total;
 
+    
     localStorage.setItem(
         "pedidoAtual",
         JSON.stringify(pedido)

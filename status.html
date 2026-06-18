@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <title>Status Pedido</title>
+</head>
+
+<body>
+    <section id="status_page">
+        <div id="container-status">
+            <h1 class="login_title">Pedido</h1>
+            <h2>Informações do pedido:</h2>
+            <h3>Items comprados:<ul id="itens"></ul></h3>
+            <h3>Valor pago: <span id="totalPago"></span></h3>
+            <h3>Tipo de entrega:<span id="delivery_type"></span></h3>
+            <h3>Endereço<span id="delivery_address"></span></h3>
+
+            <h2>Status do pedido:</h2>
+            <div class="container_status_menu">
+                <div class="status">
+                    <div class="status_buttons">
+                        <a>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                    </div>
+                    <h5 class="status_menu_description">Pedido confirmado</h5>
+                </div>
+
+                <div class="status">
+                    <div class="status_buttons">
+                        <a>
+                            <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                        </a>
+                    </div>
+                    <h5 class="status_menu_description">Pagamento confirmado</h5>
+                </div>
+
+                <div class="status">
+                    <div class="status_buttons">
+                        <a>
+                            <i class="fa-solid fa-kitchen-set"></i>
+                        </a>
+                    </div>
+                    <h5 class="status_menu_description">Preparando pedido</h5>
+                </div>
+                
+                <div class="status">
+                    <div class="status_b_buttons">
+                        <a>
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </a>
+                    </div>
+                    <h5 class="status_menu_description">Pedido enviado</h5>
+                </div>
+                
+                <div class="status">
+                    <div class="status_b_buttons">
+                        <a>
+                            <i class="fa-solid fa-handshake"></i>
+                        </a>
+                    </div>
+                    <h5 class="status_menu_description">Pedido entrege</h5>
+                </div>
+            </div>
+        
+            <button id="btn-finish-order" class="button2">
+                Finalizar pedido
+            </button>
+        </div>
+        
+    </section>
+    <script src="src/javascript/status.js"></script>
+</body>
+</html>
