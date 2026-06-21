@@ -17,11 +17,35 @@
             <h1 class="login_title">Meu perfil</h1>
             <h2 id="bemVindo"></h2>
             <p>Seus dados:</p>
-            <p id="nomeLogin"></p>
-            <p id="emailLogin"></p>
-            <p id="telefoneLogin"></p>
-            <p id="enderecoLogin"></p>
+            
+            <label>Nome</label>
+            <input type="text" id="nomeLogin" disabled>
+
+            <label>Email</label>
+            <input type="email" id="emailLogin" disabled>
+
+            <label>CPF</label>
+            <input type="cpf" id="cpfLogin" disabled>
+
+            <label>Telefone</label>
+            <input type="text" id="telefoneLogin" disabled>
+
+            <label>Endereço</label>
+            <input type="text" id="enderecoLogin" disabled>
+
             <p id="planoFidelidadeStatus"></p>
+
+            <button id="btn-edit" class="button3">
+                Editar Perfil
+            </button>
+
+            <button id="btn-save" class="button1" style="display:none;">
+                Salvar Alterações
+            </button>
+
+            <button id="btn-delete-account" class="button3" style="display:none;">
+                Excluir Conta
+            </button>
 
             <div id="my_orders">
                 <h2 id="order_title" class="login_title"></h2>

@@ -18,8 +18,24 @@
 
 #container-profile p {
     margin-top: 3%;
+    margin-bottom: 4%;
     font-size: large;
     font-weight: bold;
+}
+
+#container-profile input {
+    font-size: large;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.075);
+    box-shadow: none;
+    color: black;
+}
+
+#container-profile label {
+    font-size: large;
+    margin-bottom: 1%;
 }
 
 #my_orders {
@@ -48,3 +64,14 @@
 #button_menu a:hover {
   background-color: #b87a7a;
 }
+
+#btn-edit {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#btn-save {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+

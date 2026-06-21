@@ -66,6 +66,27 @@
     text-align: left;
 }
 
+.termos {
+    margin-top: 5%;
+    display: flex;
+}
+
+.termos label{
+    display: flex;
+}
+
+.termos input[type="checkbox"] {
+    accent-color: var(--color-bordo);
+    box-shadow: 0px 0px 0px 0px #ffffff00;
+}
+
+.termosUso {
+    font-weight: bold;
+    color: var(--color-bordo);
+    list-style: none;
+}
+
+
 /* Botão de login */
 
 #login_link p {

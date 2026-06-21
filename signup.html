@@ -40,6 +40,10 @@
 
                 <input type="password" id="senha" placeholder="Digite sua senha" required>
 
+                <h3>CPF</h3>
+
+                <input type="text" id="cpf" maxlength="14" oninput="this.value = this.value.replace(/[^0-9, ., -]/g, '')" placeholder="Digite seu CPF" required>
+
                 <h3>Telefone</h3>
 
                 <input type="tel" id="telefone" placeholder="Digite seu telefone" required>
@@ -64,6 +68,20 @@
                     </div>
                 </div>
                 <p>Saiba mais sobre o plano fidelidade na seção novidades na página principal.</p>
+
+                <div class="termos">
+                    <label>
+                        <input type="checkbox" required>
+                    </label>
+                    <p>Li e concordo com a Política de Privacidade e os <a class="termosUso" href="termos.html">Termos de Uso</a>.</p>
+                </div>
+                <div class="termos">
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                    <p>Desejo receber promoções e novidades por e-mail ou WhatsApp.</p>
+                </div>
+
                 <button type="submit" id="cadastrar" class="button2">Cadastrar</button>
                 
             </form>

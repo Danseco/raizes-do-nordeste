@@ -1,7 +1,7 @@
 footer {
     background-color: var(--color-bordo);
     box-shadow: 0px 0px 10px 2px #03030344;
-    min-height: 250px;
+    min-height: 500px;
 }
 
 .footer_logo {
@@ -60,6 +60,29 @@ footer {
     margin-top: 10%;
 }
 
+.dadosRaizes {
+    color: white;
+    padding: 0px 8% 24px 8%;
+}
+
+.termosUsoFooter {
+    color: white;
+}
+
+.termosUsoFooter:hover{
+    color: var(--color-orange);
+}
+
+
+.fins {
+    color: white;
+    display: flex;
+    margin-top: 10%;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+}
+
 @media screen and (max-width: 600px) {
     .footer_logo {
         display: none;
@@ -67,6 +90,10 @@ footer {
     #footer_itens {
         gap: 15px;
         flex-direction: column;
+    }
+
+    .dadosRaizes {
+        justify-self: center;
     }
 
 }

@@ -12,6 +12,7 @@ form.addEventListener("submit", function(e) {
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
+    const cpf = document.getElementById("cpf").value;
     const telefone = document.getElementById("telefone").value;
     const endereco = document.getElementById("endereco").value;
 
@@ -31,6 +32,7 @@ form.addEventListener("submit", function(e) {
         nome,
         email,
         senha,
+        cpf,
         telefone,
         endereco,
         planoFidelidade

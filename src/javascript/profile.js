@@ -2,32 +2,41 @@ const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
 const itensElement = document.getElementById("order_itens");
 const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
 const ultimoPedido = pedidos[pedidos.length - 1];
+const btnEdit = document.getElementById("btn-edit");
+const btnSave = document.getElementById("btn-save");
+const btnDelete = document.getElementById("btn-delete-account");
 
 if (!usuario) {
     window.location.href = "login.html";
 }
 
+// Mostrando informações do cliente
 document.getElementById("bemVindo").innerText =
     `Bem-vindo, ${usuario.nome}!`,
 
-document.getElementById("nomeLogin").innerText =
-    `Nome: ${usuario.nome}`;
+document.getElementById("nomeLogin").value =
+    usuario.nome;
 
-document.getElementById("emailLogin").innerText =
-    `Email: ${usuario.email}`;
+document.getElementById("emailLogin").value =
+    usuario.email;
 
-document.getElementById("telefoneLogin").innerText =
-    `Telefone: ${usuario.telefone}`;
+document.getElementById("cpfLogin").value =
+    usuario.cpf;
 
-document.getElementById("enderecoLogin").innerText =
-    `Endereço: ${usuario.endereco}`;
+document.getElementById("telefoneLogin").value =
+    usuario.telefone;
+
+document.getElementById("enderecoLogin").value =
+    usuario.endereco;
 
 document.getElementById("planoFidelidadeStatus").innerText =
     usuario.planoFidelidade
-        ? "Plano fidelidade: Ativo"
-        : "Plano fidelidade: Desativado";
+        ? "Status plano fidelidade: Ativo"
+        : "Status plano fidelidade: Desativado";
 
-if (ultimoPedido.cliente == usuario.nome) {
+// Mostra o último pedido feito
+
+if (ultimoPedido && ultimoPedido.cliente === usuario.nome) {
 
 document.getElementById("order_title").textContent =
     `Último pedido:`;
@@ -62,7 +71,95 @@ document.getElementById("order_franquia").textContent =
 
 };
 
+// Editar dados
+btnEdit.addEventListener("click", () => {
 
+    document.getElementById("nomeLogin").disabled = false;
+    document.getElementById("telefoneLogin").disabled = false;
+    document.getElementById("enderecoLogin").disabled = false;
+    document.getElementById("emailLogin").disabled = false;
+    document.getElementById("cpfLogin").disabled = false;
+
+    btnSave.style.display = "block";
+    btnDelete.style.display = "block";
+    btnEdit.style.display = "none";
+});
+
+btnSave.addEventListener("click", () => {
+
+    const novoNome =
+        document.getElementById("nomeLogin").value;
+
+    const novoTelefone =
+        document.getElementById("telefoneLogin").value;
+
+    const novoEndereco =
+        document.getElementById("enderecoLogin").value;
+
+    let usuarios =
+        JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const index = usuarios.findIndex(
+        user => user.email === usuario.email
+    );
+
+    if (index !== -1) {
+
+        usuarios[index].nome = novoNome;
+        usuarios[index].telefone = novoTelefone;
+        usuarios[index].endereco = novoEndereco;
+
+        localStorage.setItem(
+            "usuarios",
+            JSON.stringify(usuarios)
+        );
+
+        // Atualiza usuário logado
+        usuario.nome = novoNome;
+        usuario.telefone = novoTelefone;
+        usuario.endereco = novoEndereco;
+
+        localStorage.setItem(
+            "usuarioLogado",
+            JSON.stringify(usuario)
+        );
+
+        alert("Dados atualizados com sucesso!");
+
+        location.reload();
+    }
+
+});
+
+// Botão excluir conta
+btnDelete.addEventListener("click", () => {
+
+    const confirmacao = confirm(
+        "Tem certeza que deseja excluir sua conta? Esta ação não poderá ser desfeita."
+    );
+
+    if (!confirmacao) {
+        return;
+    }
+
+    let usuarios =
+        JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    usuarios = usuarios.filter(
+        user => user.email !== usuario.email
+    );
+
+    localStorage.setItem(
+        "usuarios",
+        JSON.stringify(usuarios)
+    );
+
+    localStorage.removeItem("usuarioLogado");
+
+    alert("Sua conta foi excluída com sucesso.");
+
+    window.location.href = "index.html";
+});
 
 
 function logout() {
