@@ -1,7 +1,5 @@
-const btnBack = document.getElementById("btn-back");
-
-btnBack.addEventListener("click", () => {
-    window.location.href = "profile.html";
+document.getElementById('btn-back').addEventListener('click', function() {
+    history.back();
 });
 
 // Animações
