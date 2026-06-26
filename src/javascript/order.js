@@ -9,7 +9,6 @@ const franquiaSelect = document.getElementById("franquia_option");
 const radiosEntrega = document.querySelectorAll('input[name="entrega"]');
 const finishButton = document.querySelector("#btn-finish");
 const cancelButton = document.querySelector("#btn-cancel");
-
 const franquias = {
     belem: "Av. Nazaré, 1234 - Nazaré, Belém - PA",
     recife: "Av. Conde da Boa Vista, 567 - Boa Vista, Recife - PE",
@@ -18,6 +17,7 @@ const franquias = {
     curitiba: "Av. República Argentina, 1500 - Água Verde, Curitiba - PR"
 };
 
+// Função que altera o endereço mostrado de acordo com o tipo de envio
 function atualizarEndereco() {
 
     const tipoEntrega = document.querySelector(
@@ -38,9 +38,7 @@ function atualizarEndereco() {
 
     pedido.tipoEntrega = tipoEntrega;
     pedido.endereco = deliveryAddress.textContent;
-    pedido.franquia = franquiaSelect.options[
-        franquiaSelect.selectedIndex
-    ].text;
+    pedido.franquia = franquiaSelect.options[franquiaSelect.selectedIndex].text;
     localStorage.setItem( "pedidoAtual", JSON.stringify(pedido) );
 }
 
@@ -60,6 +58,7 @@ franquiaSelect.addEventListener(
 
 atualizarEndereco();
 
+// Função que altera o valor do frete de acordo com o tipo de envio e status do plano fidelidade
 function atualizarPedido() {
 
     let frete = 0;
@@ -70,7 +69,7 @@ function atualizarPedido() {
         ).value;
 
     if (entrega === "domicilio") {
-        frete = 8.00;
+        frete = 12.00;
     }
 
     if (usuario.planoFidelidade) {
@@ -116,6 +115,7 @@ document.querySelectorAll('input[name="entrega"]').forEach(radio => {
 
 atualizarPedido();
 
+//Botão de finalizar pedido
 finishButton.addEventListener("click", () => {
     const pedido =
         JSON.parse(localStorage.getItem("pedidoAtual"));
@@ -139,6 +139,7 @@ finishButton.addEventListener("click", () => {
     window.location.href = "payment.html";
 });
 
+//Botão de cancelar pedido
 cancelButton.addEventListener("click", () => {
 
     if (confirm("Deseja cancelar seu pedido?")) {

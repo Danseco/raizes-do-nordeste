@@ -5,12 +5,15 @@ const ultimoPedido = pedidos[pedidos.length - 1];
 const btnEdit = document.getElementById("btn-edit");
 const btnSave = document.getElementById("btn-save");
 const btnDelete = document.getElementById("btn-delete-account");
+const btnStatus = document.getElementById("check_status")
+const pedidoAtual = JSON.parse(localStorage.getItem("pedidoAtual"));
 
+// Se não houver usuário logado é enviado para a página de login
 if (!usuario) {
     window.location.href = "login.html";
 }
 
-// Mostrando informações do cliente
+//informações do cliente
 document.getElementById("bemVindo").innerText =
     `Bem-vindo, ${usuario.nome}!`,
 
@@ -34,7 +37,7 @@ document.getElementById("planoFidelidadeStatus").innerText =
         ? "Status plano fidelidade: Ativo"
         : "Status plano fidelidade: Desativado";
 
-// Mostra o último pedido feito
+//último pedido feito
 
 if (ultimoPedido && ultimoPedido.cliente === usuario.nome) {
 
@@ -51,9 +54,22 @@ ultimoPedido.itens.forEach(item => {
     itensElement.innerHTML += `
         ${item.quantidade}x ${item.nome}<br>
     `;
+document.getElementById("order_status").textContent =
+    `Status: Pedido finalizado!`;
 
 });
+//Mostra o botão de verificar status, se o pedido ainda não foi finalizado
+btnStatus.addEventListener("click", () => {
+    window.location.href = "status.html";
+});
 
+if (pedidoAtual) {
+    btnStatus.style.display = "block";
+    document.getElementById("order_status").textContent =
+    ``;
+};
+
+//Mostra informações do último pedido
 document.getElementById("order_total").textContent =
     `Valor total: R$${ultimoPedido.total.toFixed(2).replace(".", ",")}`;
 
@@ -71,33 +87,29 @@ document.getElementById("order_franquia").textContent =
 
 };
 
-// Editar dados
+// editar dados
 btnEdit.addEventListener("click", () => {
-
     document.getElementById("nomeLogin").disabled = false;
     document.getElementById("telefoneLogin").disabled = false;
     document.getElementById("enderecoLogin").disabled = false;
     document.getElementById("emailLogin").disabled = false;
-    document.getElementById("cpfLogin").disabled = false;
+
+    //Não deixa editar o CPF
+    document.getElementById("cpfLogin").disabled = true;
 
     btnSave.style.display = "block";
     btnDelete.style.display = "block";
     btnEdit.style.display = "none";
 });
 
+// Salva edições feitas
 btnSave.addEventListener("click", () => {
+    const novoNome = document.getElementById("nomeLogin").value;
+    const novoTelefone = document.getElementById("telefoneLogin").value;
+    const novoEndereco = document.getElementById("enderecoLogin").value;
+    const novoEmail = document.getElementById("emailLogin").value;
 
-    const novoNome =
-        document.getElementById("nomeLogin").value;
-
-    const novoTelefone =
-        document.getElementById("telefoneLogin").value;
-
-    const novoEndereco =
-        document.getElementById("enderecoLogin").value;
-
-    let usuarios =
-        JSON.parse(localStorage.getItem("usuarios")) || [];
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     const index = usuarios.findIndex(
         user => user.email === usuario.email
@@ -108,16 +120,17 @@ btnSave.addEventListener("click", () => {
         usuarios[index].nome = novoNome;
         usuarios[index].telefone = novoTelefone;
         usuarios[index].endereco = novoEndereco;
+        usuarios[index].email = novoEmail;
 
         localStorage.setItem(
             "usuarios",
             JSON.stringify(usuarios)
         );
 
-        // Atualiza usuário logado
         usuario.nome = novoNome;
         usuario.telefone = novoTelefone;
         usuario.endereco = novoEndereco;
+        usuario.email = novoEmail;
 
         localStorage.setItem(
             "usuarioLogado",
@@ -161,7 +174,7 @@ btnDelete.addEventListener("click", () => {
     window.location.href = "index.html";
 });
 
-
+//Botão de deslogar
 function logout() {
     localStorage.removeItem("usuarioLogado");
 

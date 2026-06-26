@@ -46,7 +46,7 @@ const addToCart = dish => {
 
     cartContent.appendChild(cartBox);
 
-    // Remover item do carrinho
+    // Remove item do carrinho
     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
         cartBox.remove();
 
@@ -55,7 +55,7 @@ const addToCart = dish => {
         updateTotalPrice();
     });
 
-    // Botões de quantidade
+    // botões de quantidade
     cartBox.querySelector(".cart-quantity").addEventListener("click", event => {
         const numberElement = cartBox.querySelector(".number");
         const decrementButton = cartBox.querySelector("#decrement");
@@ -122,18 +122,17 @@ const updateCartCount = change => {
     }
 };
 
-// Botão de comprar
+// Botão de continuar
 const buyButton = document.querySelector(".btn-buy");
 buyButton.addEventListener("click", () => {
     const cartBoxes = cartContent.querySelectorAll(".cart-box");
-
+    // Se o carrinho estiver vazio
     if (cartBoxes.length === 0) {
         alert("Seu carrinho está vazio.");
         return;
     }
-
-    const usuarioLogado =
-        JSON.parse(localStorage.getItem("usuarioLogado"));
+    //Só continua se houver usuário logado
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     if (!usuarioLogado) {
         alert("Você precisa realizar o login.");
@@ -141,6 +140,7 @@ buyButton.addEventListener("click", () => {
         return;
     }
 
+    //Armazena os itens pedidos em um array
     const itens = [];
 
     cartBoxes.forEach(cartBox => {
@@ -170,7 +170,7 @@ buyButton.addEventListener("click", () => {
         desconto: 0,
         total: subtotal
     };
-
+    // Salva pedido atual
     localStorage.setItem(
         "pedidoAtual",
         JSON.stringify(pedido)

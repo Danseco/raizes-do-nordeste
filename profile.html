@@ -12,8 +12,10 @@
 </head>
 
 <body>
+    <!-- Página de Perfil do cliente-->
     <section id="my_account">
         <div id="container-profile">
+            <!-- Dados cadastrados -->
             <h1 class="login_title">Meu perfil</h1>
             <h2 id="bemVindo"></h2>
             <p>Seus dados:</p>
@@ -47,8 +49,12 @@
                 Excluir Conta
             </button>
 
+            <!-- Mostra último pedido realizado -->
             <div id="my_orders">
                 <h2 id="order_title" class="login_title"></h2>
+                <div id="active_order">
+                    <button id="check_status" class="button1" style="display:none;">Verificar status</button>
+                </div>
                 <p id="order_date"></p>
                 <p id="itens_title"></p>
                 <ul id="order_itens"></ul>
@@ -56,11 +62,13 @@
                 <p id="order_delivery"></p>
                 <p id="order_address"></p>
                 <p id="order_franquia"></p>
+                <p id="order_status"></p>
             </div>
 
             <div id="button_menu">
                 <a href="index.html">
-                    <i class="fa-solid fa-house"></i>
+                    <i></i>
+                    Menu principal
                 </a>
             </div>
             <button onclick="logout()" class="button3">

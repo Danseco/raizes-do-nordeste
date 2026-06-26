@@ -1,3 +1,4 @@
+//Botão do menu mobile, transforma as três barras em um X
 $(document).ready(function() {
     $("#mobile_button").on("click", function() {
         $("#menu_mobile").toggleClass("active");

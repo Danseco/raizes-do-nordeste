@@ -1,5 +1,6 @@
 const loginForm = document.getElementById("loginForm");
 
+//Dados do formulário de login
 loginForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -7,7 +8,7 @@ loginForm.addEventListener("submit", function(e) {
     const senha = document.getElementById("senha").value;
 
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
+    //verifica se o email e senha são iguais aos cadastrados
     const usuario = usuarios.find(user =>
         user.email === email && user.senha === senha
     );
@@ -23,6 +24,8 @@ loginForm.addEventListener("submit", function(e) {
 
     window.location.href = "profile.html";
 });
+
+// Animações
 
 ScrollReveal().reveal('#login_page',{
         origin: 'bottom',

@@ -16,7 +16,7 @@
             <!--Logo do restaurante -->
             <img id="nav_logo" src="images/logo.png" alt="Logo Raízes do Nordeste">
 
-            <!-- Menu principal-->
+            <!-- Menu principal - Seções -->
             <ul id="nav_list">
                 <li class="nav_item">
                     <a href="#home">Início</a>
@@ -32,7 +32,7 @@
                 </li>
             </ul>
             
-            <!--Botões do menu-->
+        <!--Botões do menu-->
             
         <div id="menu_button">
             <a href="profile.html" class="button1">
@@ -102,6 +102,7 @@
         <i class="fa-solid fa-x" id="cart-close"></i>
     </div>
 
+    <!-- Página inicial -->
     <main id="content">
         <section id="home">
             <div id="cta">
@@ -145,7 +146,8 @@
             </div>
             
         </section>
-        
+
+        <!-- Seção de novidades / Plano Fidelidade-->
         <section id="new">
             <h2 class="section_title">Novidades</h2>
             <h3 class="section_subtitle">Chegou o plano fidelidade do Raízes do Nordeste!</h3>
@@ -184,8 +186,19 @@
             </div>
         </section>
 
+        <!-- Seção do Cárdapio -->
         <section id="menu">
             <h2 class="section_title">Cardápio</h2>
+            <h3>Selecione a Franquia:</h3>
+                <select id="franquia_option">
+                    <option value="belem">Nazaré, Belém - PA</option>
+                    <option value="recife">Boa Vista, Recife - PE</option>
+                    <option value="brasilia">Asa Sul, Brasília - DF</option>
+                    <option value="saoPaulo">Consolação, São Paulo - SP</option>
+                    <option value="curitiba">Água Verde, Curitiba - PR</option>
+                </select>
+            </div>
+            <!-- Menu de categorias do Cardápio -->
             <div id="food_menu_button">
                     <a href="#starters">Entradas
                         <i class="fa-solid fa-burger"></i>
@@ -210,7 +223,7 @@
                         <i class="fa-solid fa-glass-water"></i>
                     </a>
             </div>
-
+            <!-- Menu de categorias do Cardápio para dispositivos menores -->
             <div id="food_menu_mobile">
             
                 <div class="bottom_menu">
@@ -774,7 +787,7 @@
                 </div>
             </div>
             </section>
-
+        <!-- Seção de informações -->
         <section id="info">
             <h2 class="section_title">Sobre</h2>
             <div id="info_description">
@@ -824,6 +837,7 @@
         </section>
     </main>
 
+    <!-- Rodapé -->
     <footer>
 
         <div id="footer_itens"> 
@@ -852,11 +866,14 @@
         <div class="dadosRaizes">
             <p>Email: contato@raizesdonordeste.com.br</p>
             <p>CNPJ: 12.345.678/9101-11</p>
-            <a class="termosUsoFooter" href="termos.html">Termos de Uso e Política de Privacidade</a>
-        </div>
-        <p class="fins">Página criada para fins de estudo</p>
 
-                    <!-- Menu inferior -->
+            <!-- Termos de uso, política de privacidade e LGPD -->
+             
+            <a class="termosUsoFooter" href="termos.html">Termos de Uso e Política de Privacidade</a>
+            <p class="fins">Página criada para fins de estudo</p>
+        </div>
+
+        <!-- Menu para dispositivos menores, fica no inferior da página -->
         <section id="menu_bottom">
             <div class="container_bottom_menu">
                 <div class="bottom_menu">

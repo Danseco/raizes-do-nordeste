@@ -72,6 +72,10 @@
   text-decoration: none;
 }
 
+#btn-finish-order {
+    margin-top: 3%;
+}
+
 @media screen and (max-width: 1700px) {
 
     #container-status {

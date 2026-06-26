@@ -42,6 +42,18 @@
     margin-top: 7%;
 }
 
+#active_order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#active_order button{
+    margin-top: 5%;
+    display: flex;
+}
+
 #button_menu a{
     margin-top: 5%;
     margin-bottom: 5%;

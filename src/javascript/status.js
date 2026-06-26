@@ -2,7 +2,11 @@ const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
 const pedido = JSON.parse(localStorage.getItem("pedidoAtual"));
 const itensElement = document.getElementById("itens");
 const finishOrderButton = document.querySelector("#btn-finish-order");
+const homeButton = document.querySelector("#btn-home");
 
+// Mostrando informações do Pedido
+
+// Nome do item e quantidade pedida
 pedido.itens.forEach(item => {
 
     itensElement.innerHTML += `
@@ -22,12 +26,17 @@ document.getElementById("delivery_type").innerText =
 document.getElementById("delivery_address").innerText =
     pedido.endereco;
 
+// Botão de finalizar e voltar para o menu
 finishOrderButton.addEventListener("click", () => {
 
     alert("Finalizando pedido!");
 
     localStorage.removeItem("pedidoAtual");
 
+    window.location.href = "index.html";
+});
+
+homeButton.addEventListener("click", () => {
     window.location.href = "index.html";
 });
 

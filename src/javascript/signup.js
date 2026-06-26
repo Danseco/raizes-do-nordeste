@@ -1,11 +1,10 @@
 const form = document.getElementById("cadastroForm");
-const fidelidadeSelecionada = document.querySelector(
-    'input[name="planoFidelidade"]:checked');
-
+const fidelidadeSelecionada = document.querySelector('input[name="planoFidelidade"]:checked');
 const planoFidelidade = fidelidadeSelecionada
     ? fidelidadeSelecionada.value === "true"
     : false;
 
+// Dados do formulário de cadastro
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -15,9 +14,7 @@ form.addEventListener("submit", function(e) {
     const cpf = document.getElementById("cpf").value;
     const telefone = document.getElementById("telefone").value;
     const endereco = document.getElementById("endereco").value;
-
-    const planoFidelidade =
-        document.querySelector('input[name="planoFidelidade"]:checked').value === "true";
+    const planoFidelidade = document.querySelector('input[name="planoFidelidade"]:checked').value === "true";
 
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -37,9 +34,10 @@ form.addEventListener("submit", function(e) {
         endereco,
         planoFidelidade
     };
-
+    
+    // Cria novo usuário no banco de dados
     usuarios.push(novoUsuario);
-
+    
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Cadastro realizado com sucesso!");
