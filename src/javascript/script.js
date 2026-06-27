@@ -1,11 +1,16 @@
 //Botão do menu mobile, transforma as três barras em um X
-$(document).ready(function() {
-    $("#mobile_button").on("click", function() {
-        $("#menu_mobile").toggleClass("active");
-        const icon = $(this).find("i");
-        icon.toggleClass("fa-bars");
-        icon.toggleClass("fa-x");
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileButton = document.getElementById("mobile_button");
+    const mobileMenu = document.getElementById("menu_mobile");
+    
+    mobileButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        const icon = mobileButton.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-x");
+});
+
+
 
     // Animações
     
